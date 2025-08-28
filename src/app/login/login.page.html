@@ -1,0 +1,36 @@
+<div class="login-container">
+  <div class="logo-container">
+    <img src="../../assets/img/image.png" alt="Logo" class="logo-img" />
+  </div>
+
+  <form (submit)="login()">
+    <div>
+      <ion-item>
+        <ion-input label="CORREO" type="email" [(ngModel)]="email" name="email" placeholder="email@domain.com"></ion-input>
+      </ion-item>
+  
+      <ion-item class="ion-margin-top">
+        <ion-input type="password" label="CONTRASEÑA" [(ngModel)]="password" name="password" value="NeverGonnaGiveYouUp">
+          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+        </ion-input>
+      </ion-item>
+    </div>
+    <ion-button expand="block" type="submit" class="registrarse">Registrarse</ion-button>
+
+    <ion-button expand="block" type="submit">Iniciar sesión</ion-button>
+     
+  </form>
+
+  <div class="version-info">
+    <span>
+      Versión 1.0.0
+    </span>
+  </div>
+</div>
+
+<ion-toast
+    [isOpen]="isToastOpen"
+    message="Credenciales incorrectas"
+    [duration]="5000"
+    (didDismiss)="isToastOpen = false"
+  ></ion-toast>
