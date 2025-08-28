@@ -11,6 +11,7 @@
 #container strong {
   font-size: 20px;
   line-height: 26px;
+  background-color: pink;
 }
 
 #container p {
@@ -24,4 +25,12 @@
 
 #container a {
   text-decoration: none;
+}
+
+.menu{
+  text-align: center;
+  
+}
+.inner-scroll{
+  background-color: pink;
 }
