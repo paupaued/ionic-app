@@ -9,7 +9,18 @@
         max-width: 70%;
         height: auto;
     }
+    
+   
 }
+
+ .neko{
+        font-size: 50px;
+        color: whitesmoke;
+
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        text-shadow: 10px 6px 10px rgba(0, 0, 0, 0.3);}
 
 .version-info {
     text-align: center;
@@ -24,8 +35,7 @@
     justify-content: space-between;
     height: 100vh;
     padding: 30px;
-    background-color: pink;
-
+    background: linear-gradient(to bottom, #ea9df1, #47bbd8);
     form {
         display: flex;
         flex-direction: column;
