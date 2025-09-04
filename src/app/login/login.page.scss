@@ -69,28 +69,28 @@
 ion-item {
     --border-radius: 15px;        // Bordes redondeados para los inputs
     margin-bottom: 15px;          // Espacio entre inputs
-    --background: rgba(36, 34, 34, 0.9); // Fondo semi-transparente
+    --background: rgba(62, 199, 172, 0.584); // Fondo semi-transparente
 }
 .forgot-password {
   text-align: center;
-  color: #1877f2;              // Azul de Facebook
+  color: #18f2d5;              // Azul de Facebook
   font-size: 14px;
   font-weight: 500;            // Un poco más bold
   cursor: pointer;
   margin: 15px 0;
   padding: 8px;
-  text-decoration: none;       // Sin subrayado por defecto
+  text-decoration: bold;       // Sin subrayado por defecto
   transition: all 0.3s ease;   // Transición suave
   border-radius: 6px;          // Bordes ligeramente redondeados
   
   &:hover {
-    color: #000000;            // Negro al hacer hover
-    background-color: rgba(24, 119, 242, 0.1);  // Fondo azul claro al hover
+    color: #da1717;            // Negro al hacer hover
+    background-color: rgba(155, 52, 143, 0.1);  // Fondo azul claro al hover
     text-decoration: none;     // Mantener sin subrayado
   }
   
   &:active {
-    background-color: rgba(24, 119, 242, 0.2);  // Fondo más intenso al hacer click
+    background-color: rgba(170, 46, 114, 0.2);  // Fondo más intenso al hacer click
     transform: scale(0.98);    // Pequeño efecto de "presión"
   }
 }
@@ -105,7 +105,7 @@ ion-modal {
 
 // Estilos para el header del modal
 ion-modal ion-header ion-toolbar {
-  --background: #667eea;
+  --background: #ea66e6;
   --color: white;
 }
 
@@ -124,7 +124,7 @@ ion-modal ion-content {
 }
 
 ion-modal ion-content p {
-  color: #333;
+  color: #892727;
   font-size: 16px;
   text-align: center;
   margin: 20px 16px;
@@ -139,12 +139,19 @@ ion-modal ion-item {
 }
 
 ion-modal ion-button:not([fill="clear"]) {
-  --background: #667eea;
+  --background: #db66ea;
   --color: white;
   --border-radius: 25px;
   height: 48px;
   margin: 20px 16px;
   font-weight: 600;
+}
+custom-title{
+    font-size: 24px;
+    font-weight: bold;
+    color: #892727;
+    text-align: center;
+    margin: 16px 0;
 }
 }
 
