@@ -42,3 +42,23 @@
   display: flex;
   
 }
+ion-searchbar{
+  --background: #f4f4f45f;
+  --border-radius: 10px;
+  margin: 5px;
+  width: 20%;
+  --placeholder-color: #8c8c8c;
+  --icon-color: #8c8c8c;
+    
+}
+ion-card{
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 30px;
+  padding: 20px;
+  width: auto;
+  display: flex;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
