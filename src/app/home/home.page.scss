@@ -27,10 +27,48 @@
   text-decoration: none;
 }
 
-.menu{
+.menu {
   text-align: center;
-  
+
 }
-.inner-scroll{
-  background-color: pink;
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  padding: 10%;
+  align-items: center;
+}
+
+.contenedor {
+  display: flex;
+
+}
+
+ion-searchbar {
+  --background: #f4f4f45f;
+  --border-radius: 10px;
+  margin: 5px;
+  width: 20%;
+  --placeholder-color: #8c8c8c;
+  --icon-color: #8c8c8c;
+
+}
+
+ion-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 40px;
+  padding: 20px;
+  width: auto;
+  display: flex;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+ion-card img {
+  width: 20%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
