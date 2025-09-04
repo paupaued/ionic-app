@@ -58,10 +58,17 @@ ion-card {
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 30px;
+  margin: 40px;
   padding: 20px;
   width: auto;
   display: flex;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
+}
+
+ion-card img {
+  width: 20%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
