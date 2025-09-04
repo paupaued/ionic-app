@@ -3,11 +3,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;   
     
-    img {
-        max-width: 70%;
+    
+    .logo-img {
+        max-width: 200px;  // Ajusta el tamaño máximo del logo
         height: auto;
+        border-radius: 15px; // Bordes redondeados
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra para darle profundidad
     }
     
    
@@ -32,14 +37,114 @@
 .login-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
+    justify-content: flex-start;
+    width: 100%; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: auto;
     padding: 30px;
-    background: linear-gradient(to bottom, #ea9df1, #47bbd8);
+    background-image: url('src/assets/img/3.png');  // Cambia por el nombre de tu imagen
+    background-size: cover;           // Cubre toda la pantalla
+    background-position: center;      // Centra la imagen
+    background-repeat: no-repeat;     // No repetir la imagen
+    background-attachment: fixed;
+
     form {
+        border-radius: 25px;
         display: flex;
         flex-direction: column;
-        gap: 50px;
+        gap: 40px;
+        width: 90%;
+        margin-top: 20px;
+        max-width: 450px;
+        align-self: center;
+        
     }
+    ion-button {
+    --border-radius: 25px;        // Hace los botones ovalados
+    height: 45px;                 // Altura más pequeña
+    font-size: 16px;              // Tamaño de fuente
+    margin: 5px 0;                // Espaciado vertical entre botones
+}
+ion-item {
+    --border-radius: 15px;        // Bordes redondeados para los inputs
+    margin-bottom: 15px;          // Espacio entre inputs
+    --background: rgba(36, 34, 34, 0.9); // Fondo semi-transparente
+}
+.forgot-password {
+  text-align: center;
+  color: #1877f2;              // Azul de Facebook
+  font-size: 14px;
+  font-weight: 500;            // Un poco más bold
+  cursor: pointer;
+  margin: 15px 0;
+  padding: 8px;
+  text-decoration: none;       // Sin subrayado por defecto
+  transition: all 0.3s ease;   // Transición suave
+  border-radius: 6px;          // Bordes ligeramente redondeados
+  
+  &:hover {
+    color: #000000;            // Negro al hacer hover
+    background-color: rgba(24, 119, 242, 0.1);  // Fondo azul claro al hover
+    text-decoration: none;     // Mantener sin subrayado
+  }
+  
+  &:active {
+    background-color: rgba(24, 119, 242, 0.2);  // Fondo más intenso al hacer click
+    transform: scale(0.98);    // Pequeño efecto de "presión"
+  }
+}
+// Estilos más específicos para el modal
+ion-modal {
+  --backdrop-opacity: 0.6;
+  
+  .modal-wrapper {
+    --background: transparent;
+  }
+}
+
+// Estilos para el header del modal
+ion-modal ion-header ion-toolbar {
+  --background: #667eea;
+  --color: white;
+}
+
+ion-modal ion-title {
+  color: white;
+  font-weight: 600;
+}
+
+ion-modal ion-header ion-button {
+  --color: white;
+}
+
+// Estilos para el contenido del modal
+ion-modal ion-content {
+  --background: #f8f9fa;
+}
+
+ion-modal ion-content p {
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+  margin: 20px 16px;
+}
+
+ion-modal ion-item {
+  --background: white;
+  --border-radius: 12px;
+  margin: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+ion-modal ion-button:not([fill="clear"]) {
+  --background: #667eea;
+  --color: white;
+  --border-radius: 25px;
+  height: 48px;
+  margin: 20px 16px;
+  font-weight: 600;
+}
 }
 
