@@ -39,4 +39,57 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+// Estilos del modal de recuperar contraseña
+// Estilos del modal de recuperar contraseña
+// Estilos del modal de recuperar contraseña
+// Estilos del modal de recuperar contraseña
+ion-modal.forgot-password-modal {
+  --backdrop-opacity: 0.8;
+    --width: 85%;
+  --max-width: 350px;
+  
+  ion-header ion-toolbar {
+    --background: linear-gradient(135deg, #5bbbf3, #5bc4ad);
+    --color: white;
+    
+  }
+  
+  ion-header ion-title {
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  ion-header ion-button {
+    --color: white;
+  }
+  
+  ion-content {
+    --background: #55ffe89d;
+    
+  }
+  
+  ion-content p {
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+    margin: 20px 16px;
+  }
+  
+  ion-content ion-item {
+    --background: white;
+    --border-radius: 12px;
+    margin: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  ion-content ion-button:not([fill="clear"]) {
+    --background: linear-gradient(135deg,#5bbbf3, #5bc4ad);
+    --color: white;
+    --border-radius: 25px;
+    height: 48px;
+    margin: 20px 16px;
+    font-weight: 600;
+  }
+}

@@ -11,7 +11,7 @@
     .logo-img {
         max-width: 200px;  // Ajusta el tamaño máximo del logo
         height: auto;
-        border-radius: 15px; // Bordes redondeados
+        border-radius:100%; // Bordes redondeados
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra para darle profundidad
     }
     
@@ -95,23 +95,26 @@ ion-item {
   }
 }
 // Estilos más específicos para el modal
+// Estilos para el modal
 ion-modal {
-  --backdrop-opacity: 0.6;
-  
-  .modal-wrapper {
-    --background: transparent;
-  }
+  --backdrop-opacity: 0.7;
+  --width: 90%;
+  --max-width: 400px;
+  --border-radius: 20px;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 // Estilos para el header del modal
 ion-modal ion-header ion-toolbar {
-  --background: #ea66e6;
+  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --color: white;
+  --border-radius: 20px 20px 0 0;
 }
 
 ion-modal ion-title {
   color: white;
   font-weight: 600;
+  text-align: center;
 }
 
 ion-modal ion-header ion-button {
@@ -153,5 +156,14 @@ custom-title{
     text-align: center;
     margin: 16px 0;
 }
+
+custom-content{
+  font-size: 16px;
+  color: #df2525;
+  text-align: center;
+  margin: 16px 0;
+}
+
+
 }
 
