@@ -1,3 +1,9 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
 #container {
   text-align: center;
 
@@ -71,4 +77,12 @@ ion-card img {
   height: auto;
   border-radius: 10px;
   margin-bottom: 15px;
+}
+.main-background {
+  background-image: url('src/assets/img/3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
