@@ -1,101 +1,117 @@
-
 .logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .logo-img {
+    max-width: 200px;  // Ajusta el tamaño máximo del logo
     height: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;   
-    
-    
-    .logo-img {
-        max-width: 200px;  // Ajusta el tamaño máximo del logo
-        height: auto;
-        border-radius:100%; // Bordes redondeados
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra para darle profundidad
-    }
-    
-   
+    border-radius: 100%; // Bordes redondeados
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra para darle profundidad
+  }
 }
 
- .neko{
-        font-size: 50px;
-        color: whitesmoke;
-
-        text-align: center;
-        font-family: 'Arial', sans-serif;
-        font-weight: bold;
-        text-shadow: 10px 6px 10px rgba(0, 0, 0, 0.3);}
+.neko {
+  font-size: 50px;
+  color: whitesmoke;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  text-shadow: 10px 6px 10px rgba(0, 0, 0, 0.3);
+}
 
 .version-info {
-    text-align: center;
-    font-size: 0.8em;
-    color: #888;
-    margin-top: 16px;
+  text-align: center;
+  font-size: 0.8em;
+  color: #888;
+  margin-top: 16px;
 }
 
+/* === CONTENEDOR PRINCIPAL === */
 .login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: auto;
+  padding: 30px;
+
+  /* Imagen de fondo estilo anime */
+  background-image: url('src/assets/img/3.png');  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* Caja translúcida para el formulario */
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* oscurece para contraste */
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    align-self: center;
+  }
+
+  form {
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    width: 100%; 
+    gap: 40px;
+    width: 90%;
     margin-top: 20px;
-    margin-bottom: 20px;
-    height: auto;
-    padding: 30px;
-    background-image: url('src/assets/img/3.png');  // Cambia por el nombre de tu imagen
-    background-size: cover;           // Cubre toda la pantalla
-    background-position: center;      // Centra la imagen
-    background-repeat: no-repeat;     // No repetir la imagen
-    background-attachment: fixed;
+    max-width: 450px;
+    align-self: center;
+  }
 
-    form {
-        border-radius: 25px;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        width: 90%;
-        margin-top: 20px;
-        max-width: 450px;
-        align-self: center;
-        
-    }
-    ion-button {
+  ion-button {
     --border-radius: 25px;        // Hace los botones ovalados
-    height: 45px;                 // Altura más pequeña
-    font-size: 16px;              // Tamaño de fuente
-    margin: 5px 0;                // Espaciado vertical entre botones
+    height: 45px;
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  ion-item {
+    --border-radius: 15px;
+    margin-bottom: 15px;
+    --background: rgba(62, 199, 172, 0.584); /* Fondo semi-transparente */
+    --color: #fff;
+  }
+
+  ion-input {
+    color: #fff;
+  }
 }
-ion-item {
-    --border-radius: 15px;        // Bordes redondeados para los inputs
-    margin-bottom: 15px;          // Espacio entre inputs
-    --background: rgba(62, 199, 172, 0.584); // Fondo semi-transparente
-}
+
+/* === OLVIDÉ CONTRASEÑA === */
 .forgot-password {
   text-align: center;
-  color: #18f2d5;              // Azul de Facebook
+  color: #18f2d5;
   font-size: 14px;
-  font-weight: 500;            // Un poco más bold
+  font-weight: 500;
   cursor: pointer;
   margin: 15px 0;
   padding: 8px;
-  text-decoration: bold;       // Sin subrayado por defecto
-  transition: all 0.3s ease;   // Transición suave
-  border-radius: 6px;          // Bordes ligeramente redondeados
-  
+  transition: all 0.3s ease;
+  border-radius: 6px;
+
   &:hover {
-    color: #da1717;            // Negro al hacer hover
-    background-color: rgba(155, 52, 143, 0.1);  // Fondo azul claro al hover
-    text-decoration: none;     // Mantener sin subrayado
+    color: #da1717;
+    background-color: rgba(155, 52, 143, 0.1);
   }
-  
+
   &:active {
-    background-color: rgba(170, 46, 114, 0.2);  // Fondo más intenso al hacer click
-    transform: scale(0.98);    // Pequeño efecto de "presión"
+    background-color: rgba(170, 46, 114, 0.2);
+    transform: scale(0.98);
   }
 }
-// Estilos más específicos para el modal
-// Estilos para el modal
+
+/* === MODAL === */
 ion-modal {
   --backdrop-opacity: 0.7;
   --width: 90%;
@@ -104,7 +120,6 @@ ion-modal {
   --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-// Estilos para el header del modal
 ion-modal ion-header ion-toolbar {
   --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --color: white;
@@ -121,7 +136,6 @@ ion-modal ion-header ion-button {
   --color: white;
 }
 
-// Estilos para el contenido del modal
 ion-modal ion-content {
   --background: #f8f9fa;
 }
@@ -137,7 +151,6 @@ ion-modal ion-item {
   --background: white;
   --border-radius: 12px;
   margin: 16px;
-  border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
@@ -149,21 +162,18 @@ ion-modal ion-button:not([fill="clear"]) {
   margin: 20px 16px;
   font-weight: 600;
 }
-custom-title{
-    font-size: 24px;
-    font-weight: bold;
-    color: #892727;
-    text-align: center;
-    margin: 16px 0;
+
+custom-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #892727;
+  text-align: center;
+  margin: 16px 0;
 }
 
-custom-content{
+custom-content {
   font-size: 16px;
   color: #df2525;
   text-align: center;
   margin: 16px 0;
 }
-
-
-}
-
