@@ -1,74 +1,107 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonToast, IonItem, IonButton, IonInputPasswordToggle, IonInput, IonContent, IonModal, IonHeader, IonToolbar, IonTitle, IonButtons, IonIcon } from '@ionic/angular/standalone';
-import { Router } from '@angular/router';
-import { addIcons } from 'ionicons';
-import { close } from 'ionicons/icons';
+import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IonicModule, NavController, ToastController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonModal, IonHeader, IonToolbar,IonTitle,IonButton,IonIcon, IonContent, CommonModule, FormsModule, IonItem, IonButtons, IonInput, IonInputPasswordToggle, IonToast]
+  imports: [
+    CommonModule,
+    FormsModule,           // para ngModel usado en el modal
+    ReactiveFormsModule,   // para formGroup
+    IonicModule
+  ]
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
+  loginForm: FormGroup;
+  isForgotPasswordModalOpen = false;
+  forgotPasswordEmail = '';
 
-  email: string = '';
-  password: string = '';
-  isToastOpen: boolean = false;
-
-  isForgotPasswordModalOpen: boolean = false;
-  forgotPasswordEmail: string = '';
-
-  constructor(private router: Router) {
-    addIcons({ close });
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private navCtrl: NavController,
+    private toastCtrl: ToastController
+  ) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    });
   }
 
-  
+  // Llamado desde (ngSubmit)
+  async onLogin() {
+    console.log('onLogin()', this.loginForm.value);
 
-  ngOnInit() {
-  }
+    if (this.loginForm.invalid) {
+      const t = await this.toastCtrl.create({
+        message: 'Completa un correo y contraseña válidos',
+        duration: 1500,
+        color: 'warning'
+      });
+      await t.present();
+      return;
+    }
 
-  login() {
-    console.log(this.email);
-    console.log(this.password);
+    const { email, password } = this.loginForm.value;
+    const success = this.authService.login(email, password);
 
-    if (this.email === 'bru.pinto@duocuc.cl' || this.email=='pau.escudero@duocuc.cl' && this.password === '123456') {
-      this.router.navigateByUrl('/home');
+    if (success) {
+      const toast = await this.toastCtrl.create({
+        message: 'Login exitoso',
+        duration: 1500,
+        color: 'success'
+      });
+      await toast.present();
+      this.navCtrl.navigateRoot('/home');
     } else {
-      this.isToastOpen = true;
+      const toast = await this.toastCtrl.create({
+        message: 'Credenciales incorrectas. Si no tienes cuenta, regístrate.',
+        duration: 2000,
+        color: 'danger'
+      });
+      await toast.present();
     }
   }
 
-openForgotPasswordModal() {
+  // Navegar al register
+  goToRegister() {
+    console.log('goToRegister()');
+    this.navCtrl.navigateForward('/register');
+  }
+
+  // --- Forgot password helpers ---
+  openForgotPasswordModal() {
     this.isForgotPasswordModalOpen = true;
-    this.forgotPasswordEmail = '';
   }
 
   closeForgotPasswordModal() {
     this.isForgotPasswordModalOpen = false;
   }
 
-  sendResetPasswordEmail() {
-    if (this.forgotPasswordEmail) {
-      // Aquí puedes añadir la lógica para enviar el email
-      console.log('Enviando email de recuperación a:', this.forgotPasswordEmail);
-      
-      // Simular envío exitoso
-      this.closeForgotPasswordModal();
-      
-      // Mostrar toast de confirmación
-      this.showResetEmailToast();
+  async sendResetPasswordEmail() {
+    if (!this.forgotPasswordEmail || this.forgotPasswordEmail.indexOf('@') === -1) {
+      const toast = await this.toastCtrl.create({
+        message: 'Ingresa un correo válido para recuperar contraseña',
+        duration: 1800,
+        color: 'warning'
+      });
+      await toast.present();
+      return;
     }
+
+    // Simulación: sólo un toast
+    const toast = await this.toastCtrl.create({
+      message: `Se envió un correo de recuperación a ${this.forgotPasswordEmail}`,
+      duration: 2000,
+      color: 'success'
+    });
+    await toast.present();
+
+    this.closeForgotPasswordModal();
   }
-
-  showResetEmailToast() {
-    // Puedes crear otro toast para confirmar el envío
-    console.log('Email de recuperación enviado');
-  }
-
-
 }
-
