@@ -1,31 +1,26 @@
 <ion-content>
   <ion-menu contentId="main-content">
     <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-
-        <ion-title class="app-title">NekoRate</ion-title>
-
-        <div slot="end" class="user-section">
-          <ion-avatar class="user-avatar">
-            <img alt="Avatar del usuario" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-          </ion-avatar>
-          <ion-label class="user-name">Nombre Usuario</ion-label>
-
-          <!--  Botón de cerrar sesión -->
-          <ion-button color="danger" size="small" (click)="onLogout()">
-            Cerrar sesión
-          </ion-button>
-        </div>
-      </ion-toolbar>
-
-      <!-- Barra de búsqueda en toolbar separado -->
-      <ion-toolbar class="search-toolbar">
-        <ion-searchbar placeholder="Buscar anime..." class="custom-searchbar"></ion-searchbar>
-      </ion-toolbar>
-    </ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    
+    <ion-title class="app-title">NekoRate</ion-title>
+    
+    <div slot="end" class="user-section">
+      <ion-avatar class="user-avatar">
+        <img alt="Avatar del usuario" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label class="user-name">Nombre Usuario</ion-label>
+    </div>
+  </ion-toolbar>
+  
+  <!-- Barra de búsqueda en toolbar separado -->
+  <ion-toolbar class="search-toolbar">
+    <ion-searchbar placeholder="Buscar anime..." class="custom-searchbar"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
     <ion-content class="ion-padding">
     </ion-content>
   </ion-menu>
@@ -46,75 +41,76 @@
     </ion-header>
 
     <ion-content class="ion-padding">
-      <div class="reviews-section">
-        <h2 class="section-title">Últimas Reseñas</h2>
-
-        <ion-card class="review-card">
-          <div class="card-image">
-            <img src="assets/img/4.png" alt="Wotaku ni Koi wa Muzukashii">
-            <div class="rating-overlay">
-              <ion-icon name="star"></ion-icon>
-              <span>8.5</span>
-            </div>
-          </div>
-
-          <div class="card-content">
-            <div class="categories">
-              <ion-chip color="primary" size="small">COMEDIA</ion-chip>
-              <ion-chip color="secondary" size="small">ROMANCE</ion-chip>
-            </div>
-
-            <h3 class="anime-title">Wotaku ni Koi wa Muzukashii</h3>
-
-            <div class="meta-info">
-              <span class="date">25 septiembre, 2021</span>
-              <span class="comments">4 comentarios</span>
-            </div>
-
-            <p class="description">
-              ¡Hola a todos y bienvenidos! Hoy es el turno de uno de los animes de comedia romántica que más me han gustado...
-            </p>
-
-            <ion-button fill="clear" class="read-more-btn">
-              Sigue leyendo
-              <ion-icon name="arrow-forward" slot="end"></ion-icon>
-            </ion-button>
-          </div>
-        </ion-card>
-
-        <ion-card class="review-card">
-          <div class="card-image">
-            <img src="assets/img/4.png" alt="Attack on Titan">
-            <div class="rating-overlay">
-              <ion-icon name="star"></ion-icon>
-              <span>9.2</span>
-            </div>
-          </div>
-
-          <div class="card-content">
-            <div class="categories">
-              <ion-chip color="tertiary" size="small">ACCIÓN</ion-chip>
-              <ion-chip color="primary" size="small">DRAMA</ion-chip>
-            </div>
-
-            <h3 class="anime-title">Attack on Titan</h3>
-
-            <div class="meta-info">
-              <span class="date">20 septiembre, 2021</span>
-              <span class="comments">8 comentarios</span>
-            </div>
-
-            <p class="description">
-              Una de las series más populares y controvertidas de los últimos años. Attack on Titan nos presenta un mundo...
-            </p>
-
-            <ion-button fill="clear" class="read-more-btn">
-              Sigue leyendo
-              <ion-icon name="arrow-forward" slot="end"></ion-icon>
-            </ion-button>
-          </div>
-        </ion-card>
+  <div class="reviews-section">
+    <h2 class="section-title">Últimas Reseñas</h2>
+    
+    <ion-card class="review-card">
+      <div class="card-image">
+        <img src="assets/img/4.png" alt="Wotaku ni Koi wa Muzukashii">
+        <div class="rating-overlay">
+          <ion-icon name="star"></ion-icon>
+          <span>8.5</span>
+        </div>
       </div>
-    </ion-content>
+      
+      <div class="card-content">
+        <div class="categories">
+          <ion-chip color="primary" size="small">COMEDIA</ion-chip>
+          <ion-chip color="secondary" size="small">ROMANCE</ion-chip>
+        </div>
+        
+        <h3 class="anime-title">Wotaku ni Koi wa Muzukashii</h3>
+        
+        <div class="meta-info">
+          <span class="date">25 septiembre, 2021</span>
+          <span class="comments">4 comentarios</span>
+        </div>
+        
+        <p class="description">
+          ¡Hola a todos y bienvenidos! Hoy es el turno de uno de los animes de comedia romántica que más me han gustado. Por lo general soy mucho más fan del drama que de la comedia...
+        </p>
+        
+        <ion-button fill="clear" class="read-more-btn">
+          Sigue leyendo
+          <ion-icon name="arrow-forward" slot="end"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-card>
+
+    <ion-card class="review-card">
+      <div class="card-image">
+        <img src="assets/img/4.png" alt="Attack on Titan">
+        <div class="rating-overlay">
+          <ion-icon name="star"></ion-icon>
+          <span>9.2</span>
+        </div>
+      </div>
+      
+      <div class="card-content">
+        <div class="categories">
+          <ion-chip color="tertiary" size="small">ACCIÓN</ion-chip>
+          <ion-chip color="primary" size="small">DRAMA</ion-chip>
+        </div>
+        
+        <h3 class="anime-title">Attack on Titan</h3>
+        
+        <div class="meta-info">
+          <span class="date">20 septiembre, 2021</span>
+          <span class="comments">8 comentarios</span>
+        </div>
+        
+        <p class="description">
+          Una de las series más populares y controvertidas de los últimos años. Attack on Titan nos presenta un mundo donde la humanidad vive encerrada tras murallas...
+        </p>
+        
+        <ion-button fill="clear" class="read-more-btn">
+          Sigue leyendo
+          <ion-icon name="arrow-forward" slot="end"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>
+
   </div>
 </ion-content>
