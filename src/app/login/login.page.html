@@ -52,11 +52,12 @@
 
       <ion-content class="ion-padding">
         <ion-item>
+          <ion-toolbar>
+            <h3 class="modal-title">Recuperar contraseña</h3>
+            <p>Ingresa tu correo electrónico, para recuperar tu contraseña</p>
+          </ion-toolbar>
           <ion-label position="stacked">Correo electrónico</ion-label>
-          <ion-input
-            type="email"
-            [(ngModel)]="forgotPasswordEmail"
-            name="forgotPasswordEmail"
+          <ion-input type="email" [(ngModel)]="forgotPasswordEmail" name="forgotPasswordEmail"
             placeholder="correo@ejemplo.com">
           </ion-input>
         </ion-item>
